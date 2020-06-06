@@ -1,0 +1,191 @@
+file 6994 1591446834                                            
+version 2
+run ARPTest-0-20200606-14:33:42-3208
+attr configname ARPTest
+attr datetime 20200606-14:33:42
+attr experiment ARPTest
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network ARPTest
+attr processid 3208
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.host1.numApps 1
+param **.host1.app[*].typename "\"TcpSessionApp\""
+param **.host1.app[*].active true
+param **.host1.app[*].localAddress "\"\""
+param **.host1.app[*].localPort -1
+param **.host1.app[*].connectAddress "\"server\""
+param **.host1.app[*].connectPort 1000
+param **.host1.app[*].tOpen 1.0s
+param **.host1.app[*].tSend 1.1s
+param **.host1.app[*].sendBytes 1MiB
+param **.host1.app[*].sendScript "\"\""
+param **.host1.app[*].tClose 0s
+param **.host2.numApps 1
+param **.host2.app[*].typename "\"TcpSessionApp\""
+param **.host2.app[*].active true
+param **.host2.app[*].localAddress "\"\""
+param **.host2.app[*].localPort -1
+param **.host2.app[*].connectAddress "\"server\""
+param **.host2.app[*].connectPort 1000
+param **.host2.app[*].tOpen 1.0s
+param **.host2.app[*].tSend 1.1s
+param **.host2.app[*].sendBytes 1MiB
+param **.host2.app[*].sendScript "\"\""
+param **.host2.app[*].tClose 0s
+param **.server.numApps 1
+param **.server.app[*].typename "\"TcpEchoApp\""
+param **.server.app[0].localAddress "\"\""
+param **.server.app[0].localPort 1000
+param **.server.app[0].echoFactor 2.0
+param **.server.app[0].echoDelay 0s
+param *.host*.wlan[0].typename "\"AckingWirelessInterface\""
+param *.host*.wlan[0].mac.useAck false
+param *.host*.wlan[0].mac.fullDuplex false
+param *.host*.wlan[0].radio.transmitter.communicationRange 500m
+param *.host*.wlan[0].radio.receiver.ignoreInterference true
+param *.host*.wlan[0].mac.headerLength 23B
+param **.eth[*].mac.duplexMode true
+param **.mac[*].duplexMode true
+
+vector 0 ARPTest.router.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 1 ARPTest.router.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 2 ARPTest.router.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 3 ARPTest.host1.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 4 ARPTest.host2.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 5 ARPTest.server.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 6 ARPTest.host3.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 7 ARPTest.host4.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 8 ARPTest.host3.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 9 ARPTest.host4.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+0	3610 9 0 0 0 0 1 0 0 0 0
+1	3619 9 0 0 0 0 1 0 0 0 0
+2	3628 9 0 0 0 0 1 0 0 0 0
+3	3637 9 0 0 0 0 1 0 0 0 0
+4	3646 9 0 0 0 0 1 0 0 0 0
+5	3655 9 0 0 0 0 1 0 0 0 0
+6	3664 27 0 0 0 0 3 0 2 2 4
+7	3691 27 0 0 0 0 3 0 2 2 4
+8	3718 9 0 0 0 0 1 1 1 1 1
+9	3727 9 0 0 0 0 1 1 1 1 1
+vector 10 ARPTest.host1.tcp.conn-9 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 11 ARPTest.host1.tcp.conn-9 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 12 ARPTest.host1.tcp.conn-9 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 13 ARPTest.host1.tcp.conn-9 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 14 ARPTest.host2.tcp.conn-10 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 15 ARPTest.host2.tcp.conn-10 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 16 ARPTest.host2.tcp.conn-10 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 17 ARPTest.host2.tcp.conn-10 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 18 ARPTest.host1.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 19 ARPTest.host1.ppp[0].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 20 ARPTest.host1.ppp[0].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 21 ARPTest.host1.ppp[0].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 22 ARPTest.host1.ppp[0].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 23 ARPTest.host1.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 24 ARPTest.host2.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 25 ARPTest.host2.ppp[0].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 26 ARPTest.host2.ppp[0].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 27 ARPTest.host2.ppp[0].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 28 ARPTest.host2.ppp[0].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 29 ARPTest.host2.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+3	6734 9 8 8 1 1 1 1 1 1 1
+4	6743 9 9 9 1 1 1 1 1 1 1
+10	6752 10 4 4 1 1 1 0 0 0 0
+11	6762 13 4 4 1 1 1 7504 7504 7504 56310016
+12	6775 13 4 4 1 1 1 7504 7504 7504 56310016
+13	6788 10 4 4 1 1 1 0 0 0 0
+14	6798 10 5 5 1 1 1 0 0 0 0
+15	6808 13 5 5 1 1 1 7504 7504 7504 56310016
+16	6821 13 5 5 1 1 1 7504 7504 7504 56310016
+17	6834 10 5 5 1 1 1 0 0 0 0
+18	6844 11 8 8 1 1 1 44 44 44 1936
+19	6855 11 8 8 1 1 1 44 44 44 1936
+20	6866 20 8 8 1 1 2 0 1 1 1
+21	6886 11 8 8 1 1 1 44 44 44 1936
+22	6897 10 8 8 1 1 1 0 0 0 0
+23	6907 11 8 8 1 1 1 51 51 51 2601
+24	6918 11 9 9 1 1 1 44 44 44 1936
+25	6929 11 9 9 1 1 1 44 44 44 1936
+26	6940 20 9 9 1 1 2 0 1 1 1
+27	6960 11 9 9 1 1 1 44 44 44 1936
+28	6971 10 9 9 1 1 1 0 0 0 0
+29	6981 11 9 9 1 1 1 51 51 51 2601
+
